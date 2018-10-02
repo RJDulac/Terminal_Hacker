@@ -5,15 +5,16 @@ using UnityEngine;
 public class Hacker : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         
         ShowMainMenu();
     }
 
-    void ShowMainMenu () {
-        string greeting = "Welcome Ryan";
+    void ShowMainMenu ()
+    {
+       
         Terminal.ClearScreen();
-        Terminal.WriteLine(greeting);
         Terminal.WriteLine("What would you like to hack into?");
         Terminal.WriteLine("");
         Terminal.WriteLine("Press 1 for the community college");
@@ -24,8 +25,35 @@ public class Hacker : MonoBehaviour {
 
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    void OnUserInput(string input)
+    {
+        
+        print("The user typed " + input);
+        if (input == "1")
+        {
+            print("You chose level 1");
+        }
+        else if (input == "2")
+        {
+            print("You chose level 2");
+        }
+        else if (input == "3")
+        {
+            print("You chose level 3");
+        }
+        else if (input == "menu")
+        {
+            print("Go back to menu");
+            ShowMainMenu();
+        }
+        else if (input == "007")
+        {
+            print("Choose your level Mr. Bond!");
+        }
+        else
+        {
+            print("Please choose a valid level");
+        }
+        
+    }
 }
